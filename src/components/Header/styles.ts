@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+  menuItemSelected?: 'dashboard' | 'import';
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -17,6 +18,8 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
+      display: flex;
+
       a {
         color: #fff;
         text-decoration: none;
@@ -29,6 +32,22 @@ export const Container = styled.div<ContainerProps>`
 
         &:hover {
           opacity: 0.6;
+        }
+
+        &.menuItemSelected {
+          opacity: 0;
+        }
+
+        &.menuItemUnselected {
+          opacity: 0.8;
+        }
+
+        hr {
+          border-bottom: 2px solid #ff872c;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          padding-top: 10px;
         }
       }
     }
